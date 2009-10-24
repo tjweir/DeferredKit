@@ -47,7 +47,7 @@
 	DKDeferredList *ll = [DKDeferredList deferredList:NSARRAY(d1, d2)];
 	[ll addBoth:functionTS(self, _testCallback3:)];
 	sleep(2);
-	[ll callback:@"hello mother fuckers!"];
+	[ll callback:@"hello!"];
 }
 
 - (id)waitCallback:(id)result {

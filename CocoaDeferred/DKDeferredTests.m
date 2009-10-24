@@ -42,12 +42,12 @@
 
 - (void)testCallback {
 	id _deferredCallback(id r) {
-		STAssertEqualStrings(r, @"this is a callback mother fucker", @"callback content", nil);
+		STAssertEqualStrings(r, @"this is a callback", @"callback content", nil);
 		return nil;
 	}
 	DKDeferred *d = [DKDeferred deferred];
 	[d addCallback:callbackP(_deferredCallback)];
-	[d callback:@"this is a callback mother fucker"];
+	[d callback:@"this is a callback"];
 }
 
 - (void)testErrback {
@@ -104,7 +104,6 @@
 	id _cbDeferredList(id r) {
 		//NSLog(@"deferredList:%@", r);
 		STAssertTrue([r isKindOfClass:[NSArray class]], @"deferred list type", nil);
-//		STAssertEqualStrings(r, @"this is a callback mother fucker", @"callback content", nil);
 		return nil;
 	}
 	id _cbReturnValue(id results) {
